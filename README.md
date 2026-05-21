@@ -44,19 +44,21 @@
 
 | 순위 | 모델 | TTFT (s) |
 |---:|---|---:|
-| 1 | Gemini 3.1 Flash-Lite | 0.29 |
+| 1 | GPT-5.4 nano (non-reasoning) | 0.57 |
 | 2 | Gemini 2.5 Flash | 0.65 |
-| 3 | Gemini 2.5 Flash-Lite | 0.73 |
-| 4 | GPT-5 nano (minimal) | 1.14 |
-| 5 | GPT-5.4 nano (medium) | 3.20 |
-| 6 | GPT-5.4 nano (xhigh) | 4.79 |
-| 7 | Gemini 3 Flash | 7.29 |
-| 8 | GPT-5.4 mini (xhigh) | 8.76 |
-| 9 | Gemini 2.5 Pro | 21.15 |
-| 10 | Gemini 3.1 Pro | 26.16 |
-| 11 | GPT-5 nano (high) | 101.01 |
+| 3 | GPT-5 nano (minimal) | 0.85 |
+| 4 | Gemini 2.5 Flash-Lite | 1.66 |
+| 5 | GPT-5.4 nano (xhigh) | 3.36 |
+| 6 | GPT-5.4 nano (medium) | 3.93 |
+| 7 | Gemini 3.1 Flash-Lite (reasoning) | 5.06 |
+| 8 | Gemini 3 Flash (reasoning) | 7.06 |
+| 9 | GPT-5.4 mini (xhigh) | 11.82 |
+| 10 | Gemini 2.5 Pro (reasoning) | 20.49 |
+| 11 | Gemini 3.1 Pro (reasoning) | 26.21 |
+| 12 | GPT-5 nano (high) | 101.01 |
 
 > GPT-5 · GPT-5 mini · GPT-5.4 · GPT-5.5는 Artificial Analysis 벤치마크 미공개로 제외.
+> AA 캡처일 2026-05-21 기준. 시점·프로바이더에 따라 변동.
 
 ### 한/영 토큰 효율
 
@@ -95,7 +97,7 @@
 | **Gemini 2.5 Flash-Lite** | 0.10 | 0.40 | 140 | 560 | 2025 저가 |
 | **Gemini 3 Flash** | 0.50 | 3.00 | 700 | 4,200 | reasoning, Preview |
 | **Gemini 3.1 Pro** | 2.00 | 12.00 | 2,800 | 16,800 | 현 flagship, reasoning, ≤200K (>200K: 4.00/18.00) |
-| **Gemini 3.1 Flash-Lite** | 0.25 | 1.50 | 350 | 2,100 | 현 저가, Preview, 최고속 |
+| **Gemini 3.1 Flash-Lite** | 0.25 | 1.50 | 350 | 2,100 | 현 저가, Preview, reasoning. output 314.8 t/s 최상위 |
 | **GPT-5** | 1.25 | 10.00 | 1,750 | 14,000 | 2025 flagship |
 | **GPT-5 mini** | 0.25 | 2.00 | 350 | 2,800 | 2025 mid |
 | **GPT-5 nano** | 0.05 | 0.40 | 70 | 560 | 2025 최저가 |
@@ -153,38 +155,41 @@
 ## 5. 평균 지연시간 비교표 (초)
 
 `latency ≈ TTFT + (output_tokens / output_speed)`. 출력 토큰 수는 각 문구 길이(섹션 1).
-Artificial Analysis 공개 벤치마크 기준. 변종(reasoning effort)이 공개된 경우 함께 표기.
+Artificial Analysis 캡처일: **2026-05-21**. 변종(reasoning effort)이 공개된 경우 함께 표기.
 
 | 모델 | TTFT (s) | Out speed (t/s) | 안녕하세요 | Hello | KR 문장 | EN 문장 |
 |---|---:|---:|---:|---:|---:|---:|
-| Gemini 2.5 Pro (reasoning) | 21.15 | 130.0 | 21.17 | 21.17 | 21.23 | 21.21 |
-| Gemini 2.5 Flash | 0.65 | 219.7 | 0.66 | 0.66 | 0.70 | 0.69 |
-| Gemini 2.5 Flash-Lite | 0.73 | 234.9 | 0.74 | 0.74 | 0.77 | 0.76 |
-| Gemini 3 Flash (reasoning) | 7.29 | 162.7 | 7.30 | 7.30 | 7.35 | 7.34 |
-| Gemini 3.1 Pro (reasoning) | 26.16 | 124.2 | 26.18 | 26.18 | 26.24 | 26.22 |
-| **Gemini 3.1 Flash-Lite** | **0.29** | **381.9** | **0.30** | **0.30** | **0.32** | **0.31** |
-| GPT-5 nano (minimal) | 1.14 | 142.5 | 1.15 | 1.15 | 1.20 | 1.19 |
+| Gemini 2.5 Pro (reasoning) | 20.49 | 128.6 | 20.51 | 20.51 | 20.57 | 20.55 |
+| Gemini 2.5 Flash | 0.65 | 199.3 | 0.66 | 0.66 | 0.70 | 0.69 |
+| Gemini 2.5 Flash-Lite | 1.66 | 191.4 | 1.67 | 1.67 | 1.71 | 1.70 |
+| Gemini 3 Flash (reasoning) | 7.06 | 175.3 | 7.07 | 7.07 | 7.12 | 7.11 |
+| Gemini 3.1 Pro (reasoning) | 26.21 | 119.5 | 26.23 | 26.23 | 26.29 | 26.28 |
+| Gemini 3.1 Flash-Lite (reasoning) | 5.06 | 314.8 | 5.07 | 5.07 | 5.09 | 5.09 |
+| GPT-5 nano (minimal) | 0.85 | 150.6 | 0.86 | 0.86 | 0.91 | 0.90 |
 | GPT-5 nano (high) | 101.01 | 150.4 | 101.02 | 101.02 | 101.07 | 101.06 |
-| GPT-5.4 nano (medium) | 3.20 | 161.0 | 3.21 | 3.21 | 3.26 | 3.24 |
-| GPT-5.4 nano (xhigh) | 4.79 | 190.6 | 4.80 | 4.80 | 4.84 | 4.83 |
-| GPT-5.4 mini (xhigh) | 8.76 | 163.8 | 8.77 | 8.77 | 8.82 | 8.80 |
+| **GPT-5.4 nano (non-reasoning)** | **0.57** | **165.9** | **0.58** | **0.58** | **0.62** | **0.61** |
+| GPT-5.4 nano (medium) | 3.93 | 154.7 | 3.94 | 3.94 | 3.99 | 3.98 |
+| GPT-5.4 nano (xhigh) | 3.36 | 156.1 | 3.37 | 3.37 | 3.42 | 3.40 |
+| GPT-5.4 mini (xhigh) | 11.82 | 170.1 | 11.83 | 11.83 | 11.87 | 11.86 |
 
 > 짧은 문구에서는 latency가 사실상 **TTFT가 좌우**. output speed 영향은 0.01~0.06s 수준.
 > **벤치마크 미공개**: GPT-5, GPT-5 mini, GPT-5.4, GPT-5.5.
+> AA 수치는 시점·프로바이더에 따라 변동. 정확한 production 비교 시 자체 측정 권장.
 
 ---
 
 ## 6. 핵심 관찰
 
 ### 가성비
-- **Gemini 2.5 Flash-Lite**: 입력/출력 모두 절대 최저가 ($0.10/$0.40). 0.73s TTFT로 빠르기도 함.
-- **GPT-5 nano**: OpenAI 진영 최저가 ($0.05/$0.40). 입력은 Gemini lite보다 절반.
-- **현재 사용 중인 GPT-5.4 nano** ($0.20/$1.25)는 GPT-5 nano 대비 입력 4배, 출력 3배 비용. 더 똑똑하지만 비쌈.
+- **GPT-5 nano**: 입력 절대 최저가 ($0.05). Gemini 2.5 Flash-Lite보다 입력 50%, 출력 동률($0.40).
+- **Gemini 2.5 Flash-Lite**: 출력 최저가 공동 1위 ($0.40), 입력은 $0.10. TTFT 1.66s.
+- **현재 사용 중인 GPT-5.4 nano** ($0.20/$1.25): GPT-5 nano 대비 입력 4배·출력 3배 비용. non-reasoning 모드는 TTFT 0.57s로 최단.
 
 ### 지연시간
-- 가장 빠름: **Gemini 3.1 Flash-Lite (0.29s)** > Gemini 2.5 Flash (0.65s) > Gemini 2.5 Flash-Lite (0.73s) > GPT-5 nano minimal (1.14s).
-- Pro 계열 reasoning 모델(Gemini 2.5/3.1 Pro)은 TTFT 21~26s로 짧은 문답에 부적합.
-- GPT-5 계열은 reasoning effort에 따라 편차가 큼: GPT-5 nano minimal 1.14s → high 101s, GPT-5.4 nano medium 3.20s → xhigh 4.79s. 사용 시 effort 명시 권장.
+- 가장 빠름: **GPT-5.4 nano non-reasoning (0.57s)** > Gemini 2.5 Flash (0.65s) > GPT-5 nano minimal (0.85s) > Gemini 2.5 Flash-Lite (1.66s).
+- Pro 계열 reasoning 모델(Gemini 2.5/3.1 Pro)은 TTFT 20~26s로 짧은 문답에 부적합.
+- Gemini 3.1 Flash-Lite는 output speed(314.8 t/s)가 최상위지만 reasoning 모델이라 TTFT는 5.06s. 긴 출력엔 유리, 짧은 응답엔 불리.
+- GPT-5 계열은 reasoning effort에 따라 편차가 큼: GPT-5 nano minimal 0.85s → high 101s, GPT-5.4 nano non-reasoning 0.57s → xhigh 3.36s. 사용 시 effort 명시 권장.
 
 ### 한·영 토큰 효율
 - "Hello" 1글자가 OpenAI는 1토큰, Gemini는 2토큰 → 영어 짧은 단어가 빈번하면 OpenAI 비용 50% 절감.
@@ -203,8 +208,8 @@ Artificial Analysis 공개 벤치마크 기준. 변종(reasoning effort)이 공�
 1. **환율 가정**: ₩ 환산은 1 USD = 1,400 KRW로 일괄 계산. 실제 결제 시점 환율·카드 수수료에 따라 ±5% 변동 가능.
 2. **가격 출처 다양성**: Gemini 2.5 Pro 가격은 출처마다 $1.00 ~ $1.25 사이로 보고됨. Google 공식 docs 기준 $1.25 채택. >200K context 구간은 별도 가격으로 본 표는 ≤200K 기준.
 3. **latency 누락**: GPT-5, GPT-5 mini, GPT-5.4, GPT-5.5는 Artificial Analysis에 해당 변종 벤치마크가 일관되지 않거나 미게재. 추정치 대신 표에서 제외.
-4. **Reasoning effort 가변**: GPT-5 계열은 `minimal/medium/high/xhigh` 옵션마다 TTFT가 1.1s ~ 101s로 천차만별. 사용 시 명시적으로 effort 설정 권장.
-5. **벤치마크 환경**: TTFT/output speed는 모델링된 평균치(Artificial Analysis)로 실제 production 부하·지역·시간대에 따라 차이가 큼.
+4. **Reasoning effort 가변**: GPT-5 계열은 `non-reasoning/minimal/medium/high/xhigh` 옵션마다 TTFT가 0.57s ~ 101s로 천차만별. 사용 시 명시적으로 effort 설정 권장.
+5. **벤치마크 환경**: TTFT/output speed는 Artificial Analysis 캡처(2026-05-21) 기준 평균치. 실제 production 부하·지역·시간대에 따라 차이가 큼.
 6. **batch 모드 미반영**: Gemini/OpenAI 모두 batch API 50% 할인 옵션 있으나 본 표는 standard rate 기준.
 
 ---
