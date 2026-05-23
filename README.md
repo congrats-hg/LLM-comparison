@@ -1,7 +1,7 @@
 # LLM 모델 비교 — Gemini 2.5\~3.1 · GPT-5\~5.5
 
 > 작성일: 2026-05-21
-> 가격: USD / 1M tokens. ₩ 환산은 1 USD = 1,400 KRW 가정. Per-call 비용은 μ$ = $0.000001 단위 사용.
+> 가격: USD / 1M tokens. ₩ 환산은 1 USD = 1,500 KRW 가정. Per-call 비용은 μ$ = $0.000001 단위 사용.
 > Standard rate(batch 미적용), ≤200K context 기준.
 
 ---
@@ -12,33 +12,33 @@
 
 | 순위 | 모델 | $/1M | ₩/1M |
 |---:|---|---:|---:|
-| 1 | GPT-5 nano | 0.05 | 70 |
-| 2 | Gemini 2.5 Flash-Lite | 0.10 | 140 |
-| 3 | GPT-5.4 nano | 0.20 | 280 |
-| 4 | Gemini 3.1 Flash-Lite · GPT-5 mini | 0.25 | 350 |
-| 6 | Gemini 2.5 Flash | 0.30 | 420 |
-| 7 | Gemini 3 Flash | 0.50 | 700 |
-| 8 | GPT-5.4 mini | 0.75 | 1,050 |
-| 9 | Gemini 2.5 Pro · GPT-5 | 1.25 | 1,750 |
-| 11 | Gemini 3.1 Pro | 2.00 | 2,800 |
-| 12 | GPT-5.4 | 2.50 | 3,500 |
-| 13 | GPT-5.5 | 5.00 | 7,000 |
+| 1 | GPT-5 nano | 0.05 | 75 |
+| 2 | Gemini 2.5 Flash-Lite | 0.10 | 150 |
+| 3 | GPT-5.4 nano | 0.20 | 300 |
+| 4 | Gemini 3.1 Flash-Lite · GPT-5 mini | 0.25 | 375 |
+| 6 | Gemini 2.5 Flash | 0.30 | 450 |
+| 7 | Gemini 3 Flash | 0.50 | 750 |
+| 8 | GPT-5.4 mini | 0.75 | 1,125 |
+| 9 | Gemini 2.5 Pro · GPT-5 | 1.25 | 1,875 |
+| 11 | Gemini 3.1 Pro | 2.00 | 3,000 |
+| 12 | GPT-5.4 | 2.50 | 3,750 |
+| 13 | GPT-5.5 | 5.00 | 7,500 |
 
 ### 출력 단가 (저렴한 순)
 
 | 순위 | 모델 | $/1M | ₩/1M |
 |---:|---|---:|---:|
-| 1 | Gemini 2.5 Flash-Lite · GPT-5 nano | 0.40 | 560 |
-| 3 | GPT-5.4 nano | 1.25 | 1,750 |
-| 4 | Gemini 3.1 Flash-Lite | 1.50 | 2,100 |
-| 5 | GPT-5 mini | 2.00 | 2,800 |
-| 6 | Gemini 2.5 Flash | 2.50 | 3,500 |
-| 7 | Gemini 3 Flash | 3.00 | 4,200 |
-| 8 | GPT-5.4 mini | 4.50 | 6,300 |
-| 9 | Gemini 2.5 Pro · GPT-5 | 10.00 | 14,000 |
-| 11 | Gemini 3.1 Pro | 12.00 | 16,800 |
-| 12 | GPT-5.4 | 15.00 | 21,000 |
-| 13 | GPT-5.5 | 30.00 | 42,000 |
+| 1 | Gemini 2.5 Flash-Lite · GPT-5 nano | 0.40 | 600 |
+| 3 | GPT-5.4 nano | 1.25 | 1,875 |
+| 4 | Gemini 3.1 Flash-Lite | 1.50 | 2,250 |
+| 5 | GPT-5 mini | 2.00 | 3,000 |
+| 6 | Gemini 2.5 Flash | 2.50 | 3,750 |
+| 7 | Gemini 3 Flash | 3.00 | 4,500 |
+| 8 | GPT-5.4 mini | 4.50 | 6,750 |
+| 9 | Gemini 2.5 Pro · GPT-5 | 10.00 | 15,000 |
+| 11 | Gemini 3.1 Pro | 12.00 | 18,000 |
+| 12 | GPT-5.4 | 15.00 | 22,500 |
+| 13 | GPT-5.5 | 30.00 | 45,000 |
 
 ### 지연시간 (TTFT 짧은 순)
 
@@ -92,19 +92,19 @@
 
 | 모델 | 입력 $/1M | 출력 $/1M | 입력 ₩/1M | 출력 ₩/1M | 비고 |
 |---|---:|---:|---:|---:|---|
-| **Gemini 2.5 Pro** | 1.25 | 10.00 | 1,750 | 14,000 | 2025 flagship, reasoning, ≤200K |
-| **Gemini 2.5 Flash** | 0.30 | 2.50 | 420 | 3,500 | 2025 mid |
-| **Gemini 2.5 Flash-Lite** | 0.10 | 0.40 | 140 | 560 | 2025 저가 |
-| **Gemini 3 Flash** | 0.50 | 3.00 | 700 | 4,200 | reasoning, Preview |
-| **Gemini 3.1 Pro** | 2.00 | 12.00 | 2,800 | 16,800 | 현 flagship, reasoning, ≤200K (>200K: 4.00/18.00) |
-| **Gemini 3.1 Flash-Lite** | 0.25 | 1.50 | 350 | 2,100 | 현 저가, Preview, reasoning. output 314.8 t/s 최상위 |
-| **GPT-5** | 1.25 | 10.00 | 1,750 | 14,000 | 2025 flagship |
-| **GPT-5 mini** | 0.25 | 2.00 | 350 | 2,800 | 2025 mid |
-| **GPT-5 nano** | 0.05 | 0.40 | 70 | 560 | 2025 최저가 |
-| **GPT-5.4** | 2.50 | 15.00 | 3,500 | 21,000 | 2026 flagship, ≤272K |
-| **GPT-5.4 mini** | 0.75 | 4.50 | 1,050 | 6,300 | 2026 mid |
-| **GPT-5.4 nano** | 0.20 | 1.25 | 280 | 1,750 | 2026 저가 |
-| **GPT-5.5** | 5.00 | 30.00 | 7,000 | 42,000 | 2026-04 최신 flagship |
+| **Gemini 2.5 Pro** | 1.25 | 10.00 | 1,875 | 15,000 | 2025 flagship, reasoning, ≤200K |
+| **Gemini 2.5 Flash** | 0.30 | 2.50 | 450 | 3,750 | 2025 mid |
+| **Gemini 2.5 Flash-Lite** | 0.10 | 0.40 | 150 | 600 | 2025 저가 |
+| **Gemini 3 Flash** | 0.50 | 3.00 | 750 | 4,500 | reasoning, Preview |
+| **Gemini 3.1 Pro** | 2.00 | 12.00 | 3,000 | 18,000 | 현 flagship, reasoning, ≤200K (>200K: 4.00/18.00) |
+| **Gemini 3.1 Flash-Lite** | 0.25 | 1.50 | 375 | 2,250 | 현 저가, Preview, reasoning. output 314.8 t/s 최상위 |
+| **GPT-5** | 1.25 | 10.00 | 1,875 | 15,000 | 2025 flagship |
+| **GPT-5 mini** | 0.25 | 2.00 | 375 | 3,000 | 2025 mid |
+| **GPT-5 nano** | 0.05 | 0.40 | 75 | 600 | 2025 최저가 |
+| **GPT-5.4** | 2.50 | 15.00 | 3,750 | 22,500 | 2026 flagship, ≤272K |
+| **GPT-5.4 mini** | 0.75 | 4.50 | 1,125 | 6,750 | 2026 mid |
+| **GPT-5.4 nano** | 0.20 | 1.25 | 300 | 1,875 | 2026 저가 |
+| **GPT-5.5** | 5.00 | 30.00 | 7,500 | 45,000 | 2026-04 최신 flagship |
 
 ---
 
@@ -205,7 +205,7 @@ Artificial Analysis 캡처일: **2026-05-21**. 변종(reasoning effort)이 공�
 
 ## 7. 가정 & 한계
 
-1. **환율 가정**: ₩ 환산은 1 USD = 1,400 KRW로 일괄 계산. 실제 결제 시점 환율·카드 수수료에 따라 ±5% 변동 가능.
+1. **환율 가정**: ₩ 환산은 1 USD = 1,500 KRW로 일괄 계산. 실제 결제 시점 환율·카드 수수료에 따라 ±5% 변동 가능.
 2. **가격 출처 다양성**: Gemini 2.5 Pro 가격은 출처마다 $1.00 ~ $1.25 사이로 보고됨. Google 공식 docs 기준 $1.25 채택. >200K context 구간은 별도 가격으로 본 표는 ≤200K 기준.
 3. **latency 누락**: GPT-5, GPT-5 mini, GPT-5.4, GPT-5.5는 Artificial Analysis에 해당 변종 벤치마크가 일관되지 않거나 미게재. 추정치 대신 표에서 제외.
 4. **Reasoning effort 가변**: GPT-5 계열은 `non-reasoning/minimal/medium/high/xhigh` 옵션마다 TTFT가 0.57s ~ 101s로 천차만별. 사용 시 명시적으로 effort 설정 권장.
